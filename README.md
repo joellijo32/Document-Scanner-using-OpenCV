@@ -32,7 +32,7 @@ opencv-project-template/
 
 1.  Clone the repository:
     ```bash
-    git clone <your-repo-link>
+    git clone <repo-link>
     ```
 2.  Install the required dependencies:
     ```bash
