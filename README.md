@@ -65,3 +65,16 @@ The processed images will be saved in the `results/` directory:
 *   `corrected.png`: The perspective-corrected image.
 *   `thresholded.png` (or `thresholded_inverted.png`): The final scanned output.
 
+
+## Sample run : 
+
+Input image:
+
+<img width="500" height="561" alt="1" src="https://github.com/user-attachments/assets/22e0295e-04f8-445d-8fac-50029f636737" />
+
+Output image:
+
+<img width="338" height="232" alt="corrected" src="https://github.com/user-attachments/assets/48838dd0-8b04-4814-9c6e-d95e571ee7aa" />
+
+
+Mady by Joel Lijo Mathew
