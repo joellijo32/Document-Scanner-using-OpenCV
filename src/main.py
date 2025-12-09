@@ -145,15 +145,6 @@ cv2.imwrite("./results/corrected.png", img_corrected)
 # Convert to grayscale for thresholding
 img_corrected = cv2.cvtColor(img_corrected, cv2.COLOR_BGR2GRAY)
 
-# Apply thresholding based on user input
-if args["inverted"] is not None:
-    # Inverted binary threshold
-    img_thresh = cv2.threshold(img_corrected, 135, 255, cv2.THRESH_BINARY_INV)[1]
-    cv2.imwrite("./results/thresholded_inverted.png", img_thresh)
-else:
-    # Normal binary threshold
-    img_thresh = cv2.threshold(img_corrected, 135, 255, cv2.THRESH_BINARY)[1]
-    cv2.imwrite("./results/thresholded.png", img_thresh)
 
 print("Processing complete. Results saved in ./results/")
 
