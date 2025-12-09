@@ -86,9 +86,3 @@ img_corrected = perspective_transform(img_adj, corners)
 cv2.imwrite("./results/corrected.png", img_corrected)
 img_corrected = cv2.cvtColor(img_corrected, cv2.COLOR_BGR2GRAY)
 
-# if args["inverted"] is not None:
-#     img_thresh = cv2.threshold(img_corrected, 135, 255, cv2.THRESH_BINARY_INV)[1]
-#     cv2.imwrite("./thresholded_inverted.png", img_thresh)
-# else:
-#     img_thresh = cv2.threshold(img_corrected, 135, 255, cv2.THRESH_BINARY)[1]
-#     cv2.imwrite("./thresholded.png", img_thresh)
