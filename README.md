@@ -60,7 +60,9 @@ python src/main.py --image assets/receipt.jpg --inverted
 
 ## Output
 
-The processed image will be saved in the `results/` directory: `corrected.png` - The perspective-corrected image.
+The processed images will be saved in the `results/` directory:
+*   `corrected.png`: The perspective-corrected image.
+*   `scanned.png` (or `scanned_inverted.png`): The final grayscale output.
 
 
 

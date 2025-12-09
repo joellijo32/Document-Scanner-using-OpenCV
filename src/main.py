@@ -142,18 +142,17 @@ if not os.path.exists("./results"):
 # Save the corrected image
 cv2.imwrite("./results/corrected.png", img_corrected)
 
-# Convert to grayscale for thresholding
+# Convert to grayscale
 img_corrected = cv2.cvtColor(img_corrected, cv2.COLOR_BGR2GRAY)
 
-# Apply thresholding based on user input
+# Apply inversion if requested, otherwise save grayscale
 if args["inverted"] is not None:
-    # Inverted binary threshold
-    img_thresh = cv2.threshold(img_corrected, 135, 255, cv2.THRESH_BINARY_INV)[1]
-    cv2.imwrite("./results/thresholded_inverted.png", img_thresh)
+    # Invert the image (negative)
+    img_final = cv2.bitwise_not(img_corrected)
+    cv2.imwrite("./results/scanned_inverted.png", img_final)
 else:
-    # Normal binary threshold
-    img_thresh = cv2.threshold(img_corrected, 135, 255, cv2.THRESH_BINARY)[1]
-    cv2.imwrite("./results/thresholded.png", img_thresh)
+    # Save normal grayscale
+    cv2.imwrite("./results/scanned.png", img_corrected)
 
 print("Processing complete. Results saved in ./results/")
 
