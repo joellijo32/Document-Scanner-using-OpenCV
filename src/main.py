@@ -1,13 +1,13 @@
 import cv2
 import argparse
 
-from cvtools import resize
-from cvtools import perspective_transform
-from cvtools import getoutlines
-from cvtools import simple_erode
-from cvtools import simple_dilate
-from cvtools import brightness_contrast
-from cvtools import blank
+from utils import resize
+from utils import perspective_transform
+from utils import getoutlines
+from utils import simple_erode
+from utils import simple_dilate
+from utils import brightness_contrast
+from utils import blank
 
 
 ap = argparse.ArgumentParser()
