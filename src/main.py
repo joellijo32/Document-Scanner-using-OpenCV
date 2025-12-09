@@ -83,7 +83,7 @@ img_hull = gethull(img_edge)
 corners = getcorners(img_hull)
 corners = corners.reshape(4, 2) * scale
 img_corrected = perspective_transform(img_adj, corners)
-cv2.imwrite("results/corrected.png", img_corrected)
+cv2.imwrite("./results/corrected.png", img_corrected)
 img_corrected = cv2.cvtColor(img_corrected, cv2.COLOR_BGR2GRAY)
 
 # if args["inverted"] is not None:
