@@ -1,4 +1,4 @@
-# Document Scanner Project
+# Document Scanner
 
 This project is a document scanner built using OpenCV and Python. It takes an image of a document, detects the document's edges, applies a perspective transform to get a top-down view, and then applies thresholding to give it a scanned look.
 
