@@ -6,7 +6,6 @@ This project is a document scanner built using OpenCV and Python. It takes an im
 
 *   **Automatic Document Detection**: Finds the document in the image using edge detection and contour analysis.
 *   **Perspective Correction**: Warps the detected document to a flat, top-down view.
-*   **Thresholding**: Converts the document to a clean, black and white scanned image.
 *   **Inverted Output**: Option to invert the colors of the output.
 
 ## Project Structure
@@ -21,7 +20,7 @@ opencv-project-template/
 ├── assets/           # Input images
 │   └── sample.jpg
 │
-├── results/          # Processed output images
+├── results/          # Processed output image
 │   └── corrected.png
 │
 ├── requirements.txt  # Python dependencies
@@ -61,9 +60,8 @@ python src/main.py --image assets/receipt.jpg --inverted
 
 ## Output
 
-The processed images will be saved in the `results/` directory:
-*   `corrected.png`: The perspective-corrected image.
-*   `thresholded.png` (or `thresholded_inverted.png`): The final scanned output.
+The processed image will be saved in the `results/` directory: `corrected.png` - The perspective-corrected image.
+
 
 
 ## Sample run : 
