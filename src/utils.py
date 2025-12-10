@@ -69,7 +69,7 @@ def resize(img, width=None, height=None, inter=cv2.INTER_AREA):
         r = width / float(w)
         dim = (width, int(h * r))
 
-    # Resize the image
+   
     resized = cv2.resize(img, dim, interpolation=inter)
 
     return resized
@@ -94,12 +94,12 @@ def order_points(pts):
 
     corners = np.zeros((4, 2), dtype="float32")
 
-    # Top-left will have the smallest sum, bottom-right will have the largest sum
+    
     sums = pts.sum(axis=1)
     corners[0] = pts[np.argmin(sums)]
     corners[2] = pts[np.argmax(sums)]
 
-    # Top-right will have the smallest difference, bottom-left will have the largest difference
+    
     diffs = np.diff(pts, axis=1)
     corners[1] = pts[np.argmin(diffs)]
     corners[3] = pts[np.argmax(diffs)]
@@ -111,26 +111,26 @@ def perspective_transform(img, pts):
     """
     Applies a 4-point perspective transform to obtain a top-down view of the image.
     """
-    # Order the points first
+    
     corners_old = order_points(pts)
     tl, tr, br, bl = corners_old
 
-    # Calculate the width of the new image
+
     distT = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
     distB = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
     maxW = max(int(distT), int(distB))
 
-    # Calculate the height of the new image
+
     distL = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
     distR = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
     maxH = max(int(distL), int(distR))
 
-    # Construct the set of destination points
+
     corners_corrected = np.array(
         [[0, 0], [maxW - 1, 0], [maxW - 1, maxH - 1], [0, maxH - 1]], dtype="float32"
     )
 
-    # Compute the perspective transform matrix and apply it
+  
     matrix = cv2.getPerspectiveTransform(corners_old, corners_corrected)
     img_corrected = cv2.warpPerspective(img, matrix, (maxW, maxH))
 
